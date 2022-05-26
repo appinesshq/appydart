@@ -1,0 +1,24 @@
+name: appydart
+description: >-
+  The content of the libary is particularly meant for implementing Clean Architecture inspired code bases. 
+  Therefore the main purpose of this package is to provide types for prolongating results and errors without throwing, as this would violate the CA philosophy.
+version: 0.1.0
+homepage: https://appiness.solutions
+repository: https://github.com/appinesshq/appydart
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+
+environment:
+  sdk: '>=2.17.0 <3.0.0'
+
+# dependencies:
+#   path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
