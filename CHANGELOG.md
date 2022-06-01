@@ -1,3 +1,6 @@
+## 0.1.1+1
+- Downgrade meta to 1.7.0 for compatibility reasons.
+
 ## 0.1.1
 - Move result types to result package.
 - Create session package.

@@ -4,7 +4,7 @@ description: >-
   Architecture inspired code bases.  Therefore the main purpose of this package
   is to provide types for prolongating results and errors without throwing, as
   this would violate the CA philosophy.
-version: 0.1.1
+version: 0.1.1+1
 homepage: https://appiness.solutions
 repository: https://github.com/appinesshq/appydart
 platforms:
@@ -20,7 +20,7 @@ environment:
 
 dependencies:
   jwt_decode: ^0.3.1
-  meta: ^1.8.0
+  meta: ^1.7.0
 
 dev_dependencies:
   lints: ^2.0.0
