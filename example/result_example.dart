@@ -1,4 +1,4 @@
-import 'package:appydart/appydart.dart';
+import 'package:appydart/result/result.dart';
 
 Result<String> lowerToUpper(String v) {
   if (v.toLowerCase() != v) return Result.error(Error('not lowercase'));

@@ -1,10 +1,15 @@
 import 'package:appydart/appydart.dart';
 import 'package:test/test.dart';
 
+class CustomError extends BaseError {
+  @override
+  String error() => 'this is a custom error!';
+}
+
 void main() {
   group('Results', () {
     test('Ok result', () {
-      final res = Result<String>.ok('Perfect!');
+      final res = Result.ok('Perfect!');
 
       expect(res.isError(), false);
       expect(res.isOk(), true);
@@ -24,7 +29,7 @@ void main() {
     });
 
     test('Error result', () {
-      final res = Result<String>.error(Error('something went wrong'));
+      final res = Result.error(Error('something went wrong'));
 
       expect(res.isError(), true);
       expect(res.isOk(), false);
@@ -44,6 +49,19 @@ void main() {
       expect(isError(res.error), false);
       expect(res.toString(), 'error: something went wrong');
       expect(res.isErrorAnd((v) => v == 'something went wrong'), true);
+    });
+
+    test('Result with custom error', () {
+      final res = Result.error(CustomError());
+
+      expect(res.isError(), true);
+      expect(res.isOk(), false);
+      expect(isError(res.error), true);
+      expect(res.error is CustomError, true);
+      expect(res.error.error(), 'this is a custom error!');
+      expect(res.toString(), 'error: this is a custom error!');
+      expect(
+          res.isErrorAnd((v) => v.error() == 'this is a custom error!'), true);
     });
   });
 }

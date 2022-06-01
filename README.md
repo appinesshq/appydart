@@ -4,12 +4,43 @@ AppyDart is an open source library with components used within [Appiness](https:
 
 The content of the libary is particularly meant for implementing Clean Architecture inspired code bases. Therefore the main purpose of this package is to provide types for prolongating results and errors without throwing, as this would violate the CA philosophy.
 
+## Copyright and license
+Copyright 2022 [UAB "Appiness"](https://appiness.solutions).
+```
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+  ```
+
+## State
+Under heavy development, not recommended to use in production. Breaking API changes can occur frequently until the package reaches version 1.0.0.
+
 ## Features
+
+### Result
+The result package is meant for passing results instead of try/catch blocks.
 
 - *Error* is a class for error communication where throwing errors is not an option.
 - *Result* is a class for returning a result that can be either ok or error.
 - *Option* is a class for returning none or some value.
 - *Either* is a class for returning a value in an "either or" style where Result or Option would not be appropriate.
+
+### Session
+The session package is a simple object for session management.
+
+### Token
+The token package provides the creation of session tokens, including JWT tokens.
+
+### Usecase
+The usecase package provides a base for clean architecture use cases.
 
 ## Getting started
 
@@ -27,7 +58,7 @@ An example of both has been provided, as well as defining errors and creating cu
 The package is agnostic about the style used. This decision should be taken for each project or dev team individually.
 
 ```dart
-import 'package:appydart/appydart.dart';
+import 'package:appydart/result/error.dart';
 
 // Default errors are string based.
 const exampleErr = Error('this is an error');
@@ -95,7 +126,7 @@ void main() {
 ### Happy path (Go style)
 ```dart
 import 'dart:io';
-import 'package:appydart/appydart.dart';
+import 'package:appydart/result/result.dart';
 
 Result<int> add(int v, int a) {
   final r = v + a;
@@ -119,18 +150,3 @@ void main() {
   print('5 + -10 = ${r2.value}');
 }
 ```
-
-## Copyright and license
-Copyright 2022 UAB "Appiness"
-
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
-
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.

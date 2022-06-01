@@ -1,5 +1,10 @@
 import 'error.dart';
 
+export 'error.dart';
+export 'result.dart';
+export 'option.dart';
+export 'either.dart';
+
 enum ResultState { ok, error }
 
 /// BaseResult holds a value of type T or an error of type E.
@@ -43,12 +48,8 @@ class BaseResult<T, E> {
 
   String _toErrorString() {
     if (!isError()) return '';
-    if (error is Error) {
-      final e = error as BaseError;
-      return e.toString();
-    }
-
-    return 'error: ${error.toString()}';
+    final err = error.toString();
+    return err.startsWith('error: ') ? err : 'error: $err';
   }
 
   @override
@@ -57,7 +58,7 @@ class BaseResult<T, E> {
 }
 
 // Result is an implementation of BaseResult that uses
-// the Error class for errors.
+// the BaseError class for errors.
 class Result<T> extends BaseResult<T, BaseError> {
   Result.ok(T value) : super.ok(value);
   Result.error(BaseError error) : super.error(error);
