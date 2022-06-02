@@ -1,3 +1,6 @@
+## 0.1.1+4
+- Refactoring of usecase.
+  
 ## 0.1.1+3
 - Change result definition to prevent dynamic error.
 
