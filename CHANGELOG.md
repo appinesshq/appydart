@@ -1,3 +1,6 @@
+## 0.1.1+3
+- Change result definition to prevent dynamic error.
+
 ## 0.1.1+2
 - Fix bug in isErrorType.
 

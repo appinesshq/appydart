@@ -59,7 +59,7 @@ class BaseResult<T, E> {
 
 // Result is an implementation of BaseResult that uses
 // the BaseError class for errors.
-class Result<T> extends BaseResult<T, BaseError> {
+class Result<T, E extends BaseError> extends BaseResult<T, E> {
   Result.ok(T value) : super.ok(value);
-  Result.error(BaseError error) : super.error(error);
+  Result.error(E error) : super.error(error);
 }
