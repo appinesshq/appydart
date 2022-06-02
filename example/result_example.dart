@@ -1,6 +1,6 @@
 import 'package:appydart/result/result.dart';
 
-Result<String, Error> lowerToUpper(String v) {
+Result<String> lowerToUpper(String v) {
   if (v.toLowerCase() != v) return Result.error(Error('not lowercase'));
   return Result.ok(v.toUpperCase());
 }
