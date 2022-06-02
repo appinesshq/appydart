@@ -5,6 +5,8 @@ import 'dart:core';
 /// to implement custom error types.
 @immutable
 abstract class BaseError {
+  const BaseError();
+
   String error();
 
   @override

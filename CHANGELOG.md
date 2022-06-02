@@ -1,4 +1,7 @@
-## 0.1.1+4
+## 0.1.1+6
+- Implement const constructor for BaseError.
+
+## 0.1.1+5
 - Refactoring of error.
  
 ## 0.1.1+4
