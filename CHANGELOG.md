@@ -1,4 +1,7 @@
 ## 0.1.1+4
+- Refactoring of error.
+ 
+## 0.1.1+4
 - Refactoring of usecase.
   
 ## 0.1.1+3
