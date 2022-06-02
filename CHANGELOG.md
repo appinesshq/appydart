@@ -1,3 +1,6 @@
+## 0.1.1+2
+- Fix bug in isErrorType.
+
 ## 0.1.1+1
 - Downgrade meta to 1.7.0 for compatibility reasons.
 

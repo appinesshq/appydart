@@ -19,7 +19,15 @@ class Error implements BaseError {
 }
 
 /// isErrorType returns true if v is of error type T.
-bool isErrorType<T extends BaseError>(dynamic v) => v is T;
+bool isErrorType<T extends BaseError>(dynamic v) {
+  // TODO: Check why "if(v is T) return true;" doesn't always work.
+  try {
+    v as T;
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
 
 /// isError returns true is v is a type of error.
 ///
