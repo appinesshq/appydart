@@ -1,3 +1,6 @@
+## 0.1.2
+- Create support for forms.
+
 ## 0.1.1+2
 - Fix bug in isErrorType.
 
