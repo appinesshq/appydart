@@ -1,4 +1,3 @@
-import 'package:appydart/result/error.dart';
 import 'package:appydart/result/result.dart';
 import 'package:meta/meta.dart';
 

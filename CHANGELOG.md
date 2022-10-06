@@ -1,6 +1,18 @@
 ## 0.1.2
 - Create support for forms.
 
+## 0.1.1+6
+- Implement const constructor for BaseError.
+
+## 0.1.1+5
+- Refactoring of error.
+ 
+## 0.1.1+4
+- Refactoring of usecase.
+  
+## 0.1.1+3
+- Change result definition to prevent dynamic error.
+
 ## 0.1.1+2
 - Fix bug in isErrorType.
 

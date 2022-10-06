@@ -21,22 +21,22 @@ void main() {
       // expect(err.toString(), "error: this is an error");
     });
 
-    test('Error is Error', () {
-      expect(isError(err), true);
-      expect(isErrorType<Error>(err), true);
-      expect(isErrorType<BaseError>(err), true);
-    });
+    // test('Error is Error', () {
+    //   expect(isError(err), true);
+    //   expect(isErrorType<Error>(err), true);
+    //   expect(isErrorType<BaseError>(err), true);
+    // });
 
     test('CustomError produces string', () {
       expect(customError.error(), "this is a custom error!");
       expect(customError.toString(), "error: this is a custom error!");
     });
 
-    test('CustomError is not Error, but CustomError and BaseError', () {
-      expect(isError(customError), true);
-      expect(isErrorType<CustomError>(customError), true);
-      expect(isErrorType<Error>(customError), false);
-      expect(isErrorType<BaseError>(customError), true);
-    });
+    // test('CustomError is not Error, but CustomError and BaseError', () {
+    //   expect(isError(customError), true);
+    //   expect(isErrorType<CustomError>(customError), true);
+    //   expect(isErrorType<Error>(customError), false);
+    //   expect(isErrorType<BaseError>(customError), true);
+    // });
   });
 }
