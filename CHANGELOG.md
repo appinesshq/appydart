@@ -1,3 +1,7 @@
+## 0.1.5
+- Implement capitalization extensions.
+- Implement tests for all extensions.
+
 ## 0.1.4
 - Implement `IfNotNullReturn` extension and update `Field`.
 - Upgrade dependencies.
