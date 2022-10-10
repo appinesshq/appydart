@@ -22,7 +22,8 @@ abstract class Field<T, E extends BaseError> {
     return res.isError() ? res.error as E : null;
   }
 
-  E? get showError => dirty ? error : null;
+  E? get getError => dirty ? error : null;
+  String? get getErrorString => dirty && error != null ? error?.error() : null;
 
   @override
   int get hashCode => Object.hashAll([value, dirty]);

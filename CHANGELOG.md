@@ -1,3 +1,6 @@
+## 0.1.3
+- Implement `getErrorString` for easier integration of showing errors at input fields. 
+
 ## 0.1.2
 - Create support for forms.
 
