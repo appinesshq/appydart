@@ -1,3 +1,7 @@
+## 0.1.4
+- Implement `IfNotNullReturn` extension and update `Field`.
+- Upgrade dependencies.
+
 ## 0.1.3
 - Implement `getErrorString` for easier integration of showing errors at input fields. 
 

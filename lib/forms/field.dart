@@ -9,12 +9,9 @@ abstract class Field<T, E extends BaseError> {
   const Field({T? initialValue})
       : value = initialValue,
         dirty = false;
-  const Field.dirty({T? initialValue})
-      : value = initialValue,
-        dirty = true;
+  const Field.dirty({this.value}) : dirty = true;
 
   Result<T> validate(T? value);
-  Field<T, E> copywithValue(T value);
 
   bool get isValid => validate(value).isOk();
   E? get error {
