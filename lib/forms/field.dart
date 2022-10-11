@@ -38,3 +38,35 @@ abstract class Field<T, E extends BaseError> {
         : '''Field<$T, $E>(value: $value, isValid: $isValid, error: $error)''';
   }
 }
+
+@immutable
+abstract class ConfirmableField<T, E extends BaseError> extends Field<T, E> {
+  final T? otherValue;
+
+  const ConfirmableField({T? initialValue, T? initialOtherValue})
+      : otherValue = initialOtherValue,
+        super(initialValue: initialValue);
+  const ConfirmableField.dirty({T? value, this.otherValue})
+      : super.dirty(value: value);
+
+  bool get isEqual => value == otherValue;
+
+  @override
+  int get hashCode => Object.hashAll([value, otherValue, dirty]);
+
+  @override
+  bool operator ==(Object other) {
+    if (other.runtimeType != runtimeType) return false;
+    return other is ConfirmableField<T, E> &&
+        other.value == value &&
+        other.otherValue == otherValue &&
+        other.dirty == dirty;
+  }
+
+  @override
+  String toString() {
+    return dirty
+        ? '''Field<$T, $E>.dirty(value: $value, otherValue: $otherValue, isValid: $isValid, error: $error)'''
+        : '''Field<$T, $E>(value: $value, otherValue: $otherValue, isValid: $isValid, error: $error)''';
+  }
+}

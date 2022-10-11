@@ -1,3 +1,6 @@
+## 0.1.6
+- Implement `ConfirmableField`.
+
 ## 0.1.5
 - Implement capitalization extensions.
 - Implement tests for all extensions.
